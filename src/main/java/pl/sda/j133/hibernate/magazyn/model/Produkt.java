@@ -2,6 +2,7 @@ package pl.sda.j133.hibernate.magazyn.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.Formula;
 
 import java.util.Set;
 
@@ -24,6 +25,9 @@ public class Produkt {
 
     @Enumerated(EnumType.STRING)
     private Kategoria kategoria;
+
+    @Formula(value = "(select sum(s.cena * s.ilosc)/sum(s.ilosc) FROM Sprzedaz s)")
+    private Double sredniaCenaSprzedazy;
 
     @OneToMany(mappedBy = "produkt")
     @ToString.Exclude
