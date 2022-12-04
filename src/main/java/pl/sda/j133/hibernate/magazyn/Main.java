@@ -18,7 +18,10 @@ public class Main {
                 new ObslugaDodajProdukt(),
                 new ObslugaDodajSprzedaz(),
                 new ObslugaListaProduktow(),
-                new ObslugaListaSprzedazy()
+                new ObslugaListaSprzedazy(),
+                new ObslugaListaSprzedazyProduktu(),
+                new ObslugaUsunProdukt(),
+                new ObslugaUsunSprzedaz()
         ));
         System.out.println("Podaj komendę: (dodaj produkt, dodaj sprzedaz)");
         String komenda = scanner.nextLine();
